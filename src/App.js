@@ -1,7 +1,7 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, link} from 'react-router-dom'
-import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context'
+// import { BrowserRouter, Routes, Route, link} from 'react-router-dom'
+// import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
+// import { setContext } from '@apollo/client/link/context'
 import Login from './components/Login'
 import Main from './components/Main'
 import NavBar from './components/NavBar'
@@ -13,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+      <Main />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
