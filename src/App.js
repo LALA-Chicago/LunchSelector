@@ -1,3 +1,11 @@
+import React from 'react'
+import { BrowserRouter, Routes, Route, link} from 'react-router-dom'
+import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context'
+import Login from './components/Login'
+import Main from './components/Main'
+import NavBar from './components/NavBar'
+import SavedFavs from './components/SavedFavs'
 import logo from './logo.svg';
 import './App.css';
 
