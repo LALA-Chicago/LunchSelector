@@ -1,3 +1,14 @@
+:root{
+  --header:#BC6C25;
+  --body:#6200B3;
+  --aside:#290628;
+  --footer:#B43E8F;
+}
+
+#header {
+  background-color: var(--header);
+}
+
 body {
   background-image: url('./images/banner.jpg');
   background-size: cover;
