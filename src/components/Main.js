@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import NavBar from "./NavBar";
+import Header from "./menu/Header";
+import Section from './items/Section'
 
 const Main = () => {
-    <header>
-    <NavBar />
-    </header>
+    <div>
+    <Header />
+    <h3>Hello welcome to Lizandro's Portfolio!</h3>
+                <br></br>
+                <p>Thanks for checking it out!</p>
+    <Section />
+    <p>Test</p>
+    </div>
 
 
 }
