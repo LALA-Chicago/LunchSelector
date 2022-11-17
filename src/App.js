@@ -4,7 +4,6 @@ import { HashRouter, Routes, Route, link} from 'react-router-dom'
 // import { setContext } from '@apollo/client/link/context'
 import Main from './components/Main'
 import NavBar from './components/menu/NavBar'
-import Section from './components/items/Section'
 import './App.css';
 
 function App() {
@@ -14,10 +13,12 @@ function App() {
 
   <HashRouter>
    
-    <Section />
+    
     <div className="App">
+     
       <NavBar />
-      {/* <Header /> */}
+      <Main />
+      
       <Routes>
       {/* <Main /> */}
       <Route path='' element={<Main />} />
