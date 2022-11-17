@@ -19,12 +19,7 @@ function App() {
       <NavBar />
       <Main />
       
-      <Routes>
-      {/* <Main /> */}
-      <Route path='' element={<Main />} />
-      {/* <Route path='about' element={<About />} />
-      <Route path='portfolio' element={<Projects />} /> */}
-    </Routes>
+      
     </div>
     
   </HashRouter>
