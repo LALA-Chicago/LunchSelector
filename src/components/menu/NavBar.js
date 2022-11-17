@@ -4,6 +4,7 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from '../SignUp';
 import LoginForm from '../Login';
 import Auth from '../../utils/auth';
+import '../../App.css'
 
   const NavBar = () => {
     // set modal display state
@@ -11,7 +12,7 @@ import Auth from '../../utils/auth';
   
     return (
       <>
-        <Navbar bg='dark' variant='dark' expand='lg'>
+        <Navbar class='header' bg='light' variant='light' expand='lg'>
           <Container fluid>
             <Navbar.Brand as={Link} to='/'>
               Google Books Search
