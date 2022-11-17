@@ -1,5 +1,12 @@
+body {
+  background-image: url('./images/banner.jpg');
+  background-size: cover;
+  /* height: 100vh; */
+}
+
 .App {
   text-align: center;
+ 
 }
 
 .App-logo {

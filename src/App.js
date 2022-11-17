@@ -13,17 +13,19 @@ function App() {
     //truing to get them on main to only have main here but i cant get it yet
 
   <HashRouter>
-    <NavBar />
+   
     <Section />
     <div className="App">
+      <NavBar />
       {/* <Header /> */}
-    </div>
-    <Routes>
+      <Routes>
       {/* <Main /> */}
       <Route path='' element={<Main />} />
       {/* <Route path='about' element={<About />} />
       <Route path='portfolio' element={<Projects />} /> */}
     </Routes>
+    </div>
+    
   </HashRouter>
   );
 }
