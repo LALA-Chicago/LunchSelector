@@ -1,13 +1,26 @@
 body {
   background-image: url('./images/banner.jpg');
   background-size: cover;
-  /* position: absolute; */
-  
+  height: 100vh;
 }
 
 .App {
   text-align: center;
  
+}
+
+.main {
+  color: aliceblue;
+  font-weight: 125px;
+}
+
+.box {
+  background-color: orange;
+  width: 300px;
+  border: 1px solid black;
+  padding: 15px;
+  margin: auto;
+  
 }
 
 .App-logo {

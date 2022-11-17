@@ -5,13 +5,14 @@ import React, { useState } from 'react';
 const Main = () => {
 
     return (
-    <div>
+    
+    <div className='main'>
   
-    <h3>Hello welcome to Lizandro's Portfolio!</h3>
-                <br></br>
-                <p>Thanks for checking it out!</p>
+                <h2>RANDOMIZE</h2>
+                <h2 className='box'>YOUR FOOD CHOICES</h2>
+                <h2>AND RESTAURANTS</h2>
 
-    <p>Test</p>
+
     </div>
 
     )
