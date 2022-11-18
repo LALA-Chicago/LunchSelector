@@ -8,6 +8,7 @@ import { setContext } from '@apollo/client/link/context'
 import Main from './components/Main'
 import NavBar from './components/NavBar'
 import Form from './components/Form'
+import Nav from './components/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -43,7 +44,7 @@ function App() {
    
     
     <div className="App">
-     
+      {/* <Nav /> */}
       <NavBar />
       <br></br>
       <br></br>
