@@ -1,76 +1,70 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-import SignUpForm from './SignUp';
-import LoginForm from './Login';
-import Auth from '../utils/auth';
+import { Navbar, Container, Modal } from 'react-bootstrap';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from '../pages/Login'
+import SignUp from '../pages/SignUp'
+// import Auth from '../utils/auth';
 import '../App.css'
 import logo from '../images/logo.png'
 
   const NavBar = () => {
-    // set modal display state
+    
     const [showModal, setShowModal] = useState(false);
   
     return (
       <>
         <Navbar className='color-nav'variant='dark' expand='lg'>
-
         <img className='logo-image' src={logo} alt="logo"></img>
-
           <Container fluid>
             <Navbar.Brand as={Link} to='/'>
               Foodie Finder
             </Navbar.Brand>
+            
             <Navbar.Toggle aria-controls='navbar' />
             <Navbar.Collapse id='navbar'>
-              <Nav className='ml-auto'>
-                {/* if user is logged in show saved books and logout */}
-                {Auth.loggedIn() ? (
-                  <>
-                    <Nav.Link as={Link} to='/saved'>
-                      See Your Books
-                    </Nav.Link>
-                    <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
-                  </>
-                ) : (
-                  <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
-                )}
-              </Nav>
             </Navbar.Collapse>
+            
+            <Navbar.Brand as={Link} to='Login'>
+            <Link to='login'>Login</Link>
+            <Routes>
+            <Route path='login' element={<Login />} />
+            </Routes>
+            </Navbar.Brand>
+            <Navbar.Brand as={Link} to='SignUp'>
+            <Link to='signup'>Sign Up</Link>
+            <Routes>
+            <Route path='signup' element={<SignUp />} />
+            </Routes>
+            </Navbar.Brand>
           </Container>
-        </Navbar>
-        {/* set modal data up */}
-        <Modal
+
+          <div>
+          <Modal
           size='xlg'
           show={showModal}
           onHide={() => setShowModal(false)}
           aria-labelledby='signup-modal'>
-          {/* tab container to do either signup or login component */}
-          <Tab.Container defaultActiveKey='login'>
-            <Modal.Header closeButton>
-              <Modal.Title id='signup-modal'>
-                <Nav variant='pills'>
-                  <Nav.Item>
-                    <Nav.Link eventKey='login'>Login</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
-                  </Nav.Item>
-                </Nav>
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <Tab.Content>
-                <Tab.Pane eventKey='login'>
-                  <LoginForm handleModalClose={() => setShowModal(false)} />
-                </Tab.Pane>
-                <Tab.Pane eventKey='signup'>
-                  <SignUpForm handleModalClose={() => setShowModal(false)} />
-                </Tab.Pane>
-              </Tab.Content>
-            </Modal.Body>
-          </Tab.Container>
-        </Modal>
+          <Routes>
+            <Route path='login' element={<Login />} />
+            <Route path='signup' element={<SignUp />} />
+          </Routes>
+          </Modal>
+          </div>
+
+          {/* <nav className='place'>
+            <Link to='login'>Login</Link>
+            <br></br>
+            <Link to='signup'>Sign Up</Link>
+          </nav>
+          <Routes>
+            <Route path='login' element={<Login />} />
+            <Route path='signup' element={<SignUp />} />
+          </Routes> */}
+          
+        </Navbar>
+
+        
       </>
     );
   };
