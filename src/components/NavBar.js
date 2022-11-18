@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-import SignUpForm from '../SignUp';
-import LoginForm from '../Login';
-import Auth from '../../utils/auth';
-import '../../App.css'
-import logo from '../../images/logo.png'
+import SignUpForm from './SignUp';
+import LoginForm from './Login';
+import Auth from '../utils/auth';
+import '../App.css'
+import logo from '../images/logo.png'
 
   const NavBar = () => {
     // set modal display state
@@ -15,7 +15,7 @@ import logo from '../../images/logo.png'
       <>
         <Navbar className='color-nav'variant='dark' expand='lg'>
 
-        <img class='logo-image' src={logo} alt="logo"></img>
+        <img className='logo-image' src={logo} alt="logo"></img>
 
           <Container fluid>
             <Navbar.Brand as={Link} to='/'>
@@ -41,7 +41,7 @@ import logo from '../../images/logo.png'
         </Navbar>
         {/* set modal data up */}
         <Modal
-          size='lg'
+          size='xlg'
           show={showModal}
           onHide={() => setShowModal(false)}
           aria-labelledby='signup-modal'>
