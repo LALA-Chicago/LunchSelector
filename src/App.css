@@ -1,8 +1,35 @@
 :root{
   --header:#BC6C25;
-  --body:#6200B3;
-  --aside:#290628;
-  --footer:#B43E8F;
+  --body:#606C38;
+  --aside:#283618;
+  --footer:#DDA15E;
+  --text: #FEFAE0;
+}
+
+* p {
+  font-size: 16px;
+  
+}
+
+.modal-content {
+  -webkit-box-shadow: -1px 1px 5px 9px #333;
+  -moz-box-shadow: -1px 1px 5px 9px #333;
+  box-shadow: -1px 1px 50px 1px #333;
+  text-align: center;
+}
+
+
+.modal-header{
+    background: var(--header) !important;
+  text-align: center;
+}
+.modal-body{
+  background: var(--header) !important;
+  text-align: center;
+}
+.modal-footer {
+  background: var(--header) !important;
+  text-align: center;
 }
 
 #header {
@@ -20,18 +47,30 @@ body {
  
 }
 
+.color-nav {
+  background-color: var(--header);
+}
+
+.logo-image{
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
+}
+
 .main {
-  color: aliceblue;
+  margin-top: 8rem;
+  color: var(--text);
   font-weight: 125px;
 }
 
 .box {
-  background-color: orange;
+  background-color: var(--header);
   width: 300px;
   border: 1px solid black;
   padding: 15px;
   margin: auto;
-  
 }
 
 .App-logo {
