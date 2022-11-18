@@ -1,3 +1,3 @@
-export const searchZipCode = (query) => {
-    return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
+export const searchZipCode = (location) => {
+    return fetch(`https://api.yelp.com/v3/businesses/search?location=${location}`);
   };
