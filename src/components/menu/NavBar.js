@@ -5,6 +5,7 @@ import SignUpForm from '../SignUp';
 import LoginForm from '../Login';
 import Auth from '../../utils/auth';
 import '../../App.css'
+import logo from '../../images/logo.png'
 
   const NavBar = () => {
     // set modal display state
@@ -12,17 +13,17 @@ import '../../App.css'
   
     return (
       <>
-        <Navbar class='header' bg='light' variant='light' expand='lg'>
+        <Navbar className='color-nav'variant='dark' expand='lg'>
+
+        <img class='logo-image' src={logo} alt="logo"></img>
+
           <Container fluid>
             <Navbar.Brand as={Link} to='/'>
-              Google Books Search
+              Foodie Finder
             </Navbar.Brand>
             <Navbar.Toggle aria-controls='navbar' />
             <Navbar.Collapse id='navbar'>
               <Nav className='ml-auto'>
-                <Nav.Link as={Link} to='/'>
-                  Search For Books
-                </Nav.Link>
                 {/* if user is logged in show saved books and logout */}
                 {Auth.loggedIn() ? (
                   <>
