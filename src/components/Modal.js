@@ -31,7 +31,7 @@ function Example() {
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title text-light">What are we eating?</h5>
+              <h5 className="modal-title text-light w-100">What are we eating?</h5>
   
               <button
                 onClick={closeModal}
@@ -45,13 +45,13 @@ function Example() {
               </button>
             </div>
   
-            <div className="modal-body">
+            <div className="modal-body ">
               <div className="row">
-                <div className="col-6">
+                <div className="col-6 ">
                 </div>
   
-                <div className="col-6">
-                  <p className="lead text-light">
+                <div>
+                  <p className="modalText">
 
                     Ever spent hours debating what to eat with your partner/roommate/colleague?
                     No more!
@@ -68,9 +68,8 @@ function Example() {
             </div>
   
             <div className="modal-footer">
-              <button className="btn-lg btn btn-primary">
-                <span style={{ color: '#BC6C25' }}>
-                  <i className="fa fa-phone mr-1 " />
+              <button className="btn-lg">
+                <span>
                   <a href="ready to eat" style={{ color: '#fff' }}>
                     I'm Ready to Eat{' '}
                   </a>

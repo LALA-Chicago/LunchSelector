@@ -8,7 +8,6 @@
 
 * p {
   font-size: 16px;
-  
 }
 
 .place {
@@ -21,21 +20,47 @@
   -webkit-box-shadow: -1px 1px 5px 9px #333;
   -moz-box-shadow: -1px 1px 5px 9px #333;
   box-shadow: -1px 1px 50px 1px #333;
-  text-align: center;
+  justify-content: center;
+  background-color: var(--header);
 }
 
+.modalText {
+  text-align: center;
+  width: 100%;
+  color: var(--text);
+  font-size: large;
+}
 
+.btn-lg {
+  background-color: #DDA15E;
+  border-radius: 6px;
+  width: 29.2rem;
+  height: 3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.randomBtn {
+  background-color: #DDA15E;
+  border-radius: 6px;
+  width: 17rem;
+  height: 6rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text);
+}
 .modal-header{
     background: var(--header) !important;
   text-align: center;
 }
 .modal-body{
   background: var(--header) !important;
-  text-align: center;
+  margin: 0 auto;
 }
 .modal-footer {
   background: var(--header) !important;
-  text-align: center;
+  margin: 0 auto;
 }
 
 #header {
@@ -66,17 +91,37 @@ body {
 }
 
 .main {
-  margin-top: 8rem;
+  margin-top: 5rem;
   color: var(--text);
   font-weight: 125px;
 }
 
 .box {
   background-color: var(--header);
-  width: 300px;
-  border: 1px solid black;
-  padding: 15px;
+  width: 25rem;
+  padding: 5px;
   margin: auto;
+  border-radius: 6px;
+}
+
+.zipField {
+  background-color: var(--text);
+  border-color: var(--header);
+  border-style:solid;
+  border-radius: 8px;
+  border-width: 5px;
+  padding: 5px;
+  color: var(--body);
+}
+
+.cuisineForm {
+  background-color: var(--text);
+  color: var(--body);
+  border-color: var(--header);
+  border-style:solid;
+  border-radius: 8px;
+  border-width: 5px;
+  padding: 5px;
 }
 
 .App-logo {

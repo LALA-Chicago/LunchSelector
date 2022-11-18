@@ -39,7 +39,7 @@ const Form = () => {
     return(
         <div>
             <form onSubmit={handleFormChange}>
-                <select>
+                <select className='cuisineForm'>
                 <option>Cuisine Option</option>
                 <option>Mexican</option>
                 <option>Italian</option>
@@ -47,7 +47,7 @@ const Form = () => {
                 </select>
                 <br></br>
                 <br></br>
-                <input
+                <input className='zipField'
                 value={searchZip}
                 onChange={(e) => setSearchZip(e.target.value)} 
                 placeholder='Zip Code'
@@ -55,7 +55,7 @@ const Form = () => {
                 />
                 <br></br>
                 <br></br>
-                <input
+                <input className='randomBtn'
                 type="submit"
                 value="RANDOMIZE"
                 />
