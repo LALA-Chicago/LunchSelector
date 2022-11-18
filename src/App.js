@@ -4,6 +4,7 @@ import { HashRouter, Routes, Route, link} from 'react-router-dom'
 // import { setContext } from '@apollo/client/link/context'
 import Main from './components/Main'
 import NavBar from './components/menu/NavBar'
+import Form from './components/Form'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -18,7 +19,13 @@ function App() {
     <div className="App">
      
       <NavBar />
+      <br></br>
+      <br></br>
       <Main />
+      <br></br>
+      <br></br>
+      <Form />
+
       
       
     </div>
