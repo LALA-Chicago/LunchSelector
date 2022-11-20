@@ -58,9 +58,9 @@ const Signup = () => {
                 <input
                   className="zipField"
                   placeholder="Your username"
-                  name="name"
+                  name="username"
                   type="text"
-                  value={formState.name}
+                  value={formState.username}
                   onChange={handleChange}
                 />
                 <input
