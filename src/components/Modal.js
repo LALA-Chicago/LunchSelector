@@ -32,7 +32,6 @@ function Example() {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title text-light w-100">What are we eating?</h5>
-  
               <button
                 onClick={closeModal}
                 style={{ color: '#fff' }}

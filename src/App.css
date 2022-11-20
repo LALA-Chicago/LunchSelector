@@ -11,9 +11,10 @@
 }
 
 .place {
-  padding-right: 8px;
   text-decoration: none;
-  
+  display: flex;
+  justify-content:end;
+  align-items:flex-end;
 }
 
 .navbar {
@@ -24,16 +25,25 @@
   width: 100%;
 }
 .navbar a {
-  float: left;
-  display: block;
-  color: #eeeeee;
-  text-align: center;
+  color: var(--text);
+  text-align: end;
   padding: 15px 18px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
+  float: right;
 }
+
+.navbar-brand {
+    color: var(--text);
+  text-align: end;
+  padding: 15px 18px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
 .navbar a:hover {
-  color: #1c87c9;
+  color: var(--body);
+  text-decoration: none;
 }
 
 .modal-content {
@@ -43,6 +53,14 @@
   justify-content: center;
   background-color: var(--header);
 }
+
+.wrapper{
+    -webkit-filter: blur(8px);
+    -ms-filter: blur(8px);
+    -moz-filter: blur(8px);
+    -o-filter: blur(8px);
+    filter: blur(8px);
+} 
 
 .modalText {
   text-align: center;
@@ -72,15 +90,12 @@
 }
 .modal-header{
     background: var(--header) !important;
-  text-align: center;
 }
 .modal-body{
   background: var(--header) !important;
-  margin: 0 auto;
 }
 .modal-footer {
   background: var(--header) !important;
-  margin: 0 auto;
 }
 
 #header {
