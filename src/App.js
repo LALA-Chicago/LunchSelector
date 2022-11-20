@@ -12,9 +12,15 @@ import Nav from './components/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+// const httpLink = createHttpLink({
+//   uri: '/graphql',
+// });
+
+const url = process.env.NODE_ENV === 'development'
+    ? '/graphql' : 'https://boiling-badlands-98104.herokuapp.com/';
 const httpLink = createHttpLink({
-  uri: '/graphql',
-});
+  uri: url
+})
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
