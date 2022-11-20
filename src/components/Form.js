@@ -23,7 +23,10 @@ const Form = () => {
         const { items } = await response.json();
 
         const foodData = items.map((food) => ({
-            
+            restaurantId: restaurant.id,
+            name: restaurant.name,
+            display_phone: restaurant.display_phone,
+            location: restaurant.location.display_address[0].concat(', ',restaurant.location.display_address[1])
         }))
         //insert way to pull data from api
 
