@@ -40,13 +40,14 @@ const Login = (props) => {
       password: '',
     });
   };
-
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
+    <main>
+      <div>
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
+        <div className="modal-header">
+              <h5 className="modal-title text-light w-100">Login! Press ESC or Submit to exit.</h5>
+            </div>
+          <div className="modal-body">
             {data ? (
               <p>
                 Success! You may now head{' '}
@@ -55,7 +56,7 @@ const Login = (props) => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input"
+                  className="zipField"
                   placeholder="Your email"
                   name="email"
                   type="email"
@@ -63,20 +64,22 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input"
+                  className="zipField"
                   placeholder="******"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
                 />
+                <div className="modal-footer">
                 <button
-                  className="btn btn-block btn-info"
+                  className="lspageBtn"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
                   Submit
                 </button>
+            </div>
               </form>
             )}
 

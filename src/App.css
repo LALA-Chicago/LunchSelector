@@ -10,11 +10,9 @@
   font-size: 16px;
 }
 
-.place {
-  text-decoration: none;
-  display: flex;
-  justify-content:end;
-  align-items:flex-end;
+#place {
+  float: right;
+  font-weight: bold;
 }
 
 .navbar {
@@ -31,22 +29,25 @@
   text-decoration: none;
   font-size: 20px;
   float: right;
+  transition: all .2s ease-in-out;
 }
 
 .navbar-brand {
-    color: var(--text);
+  color: var(--text);
   text-align: end;
   padding: 15px 18px;
   text-decoration: none;
   font-size: 20px;
+  font-weight: bold;
 }
 
 .navbar a:hover {
   color: var(--body);
   text-decoration: none;
+  transform: scale(1.1); 
 }
 
-.modal-content {
+.modal-bg {
   -webkit-box-shadow: -1px 1px 5px 9px #333;
   -moz-box-shadow: -1px 1px 5px 9px #333;
   box-shadow: -1px 1px 50px 1px #333;
@@ -79,6 +80,23 @@
   color: var(--text);
 }
 
+.lspageBtn{
+  background-color: #DDA15E;
+  border-radius: 6px;
+  width: 30rem;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text);
+  transition: all .2s ease-in-out; 
+}
+
+.lspageBtn:hover {
+  background-color: var(--body);
+  color: var(--text);
+  transform: scale(1.1); 
+}
+
 .randomBtn {
   background-color: #DDA15E;
   border-radius: 6px;
@@ -87,7 +105,14 @@
   font-size: 2rem;
   font-weight: bold;
   color: var(--text);
+  transition: all .2s ease-in-out; 
 }
+.randomBtn:hover {
+  background-color: var(--body);
+  color: var(--text);
+  transform: scale(1.1); 
+}
+
 .modal-header{
     background: var(--header) !important;
 }
@@ -124,6 +149,17 @@ body {
   overflow: hidden;
   margin-top: -6px;
 }
+#navbar-brand:hover {
+  color: var(--body);
+  text-decoration: none;
+  transform: scale(1.1); 
+}
+
+#navbar-brand{
+  color: var(--text);
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+}
 
 .main {
   margin-top: 5rem;
@@ -147,6 +183,12 @@ body {
   border-width: 5px;
   padding: 5px;
   color: var(--body);
+  font-weight: bold;
+}
+.zipField:hover {
+  background-color: var(--body);
+  color: var(--text);
+  font-weight: bold;
 }
 
 .cuisineForm {
@@ -157,6 +199,13 @@ body {
   border-radius: 8px;
   border-width: 5px;
   padding: 5px;
+  font-weight: bold;
+}
+
+.cuisineForm:hover {
+  background-color: var(--body);
+  color: var(--text);
+  font-weight: bold;
 }
 
 .App-logo {

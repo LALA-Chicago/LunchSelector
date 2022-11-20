@@ -29,7 +29,7 @@ function Example() {
     return isShown ? (
       <div className="modal" style={dynammicModalClass()} id="channelModal">
         <div className="modal-dialog modal-dialog-centered" role="document">
-          <div className="modal-content">
+          <div className="modal-content" >
             <div className="modal-header">
               <h5 className="modal-title text-light w-100">What are we eating?</h5>
               <button

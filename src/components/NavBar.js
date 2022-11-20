@@ -12,39 +12,29 @@ import logo from '../images/logo.png'
   const NavBar = () => {
     
     const [showModal, setShowModal] = useState(false);
-    const handleClose = () => {
-      setShowModal(false);}
+    const handleClose = () => setShowModal(false);
 
-    const handleShow = () => {
-      setShowModal(true);}
+    const handleShow = () => setShowModal(true);
   
     return (
       <>
         <Navbar className='color-nav'variant='dark' expand='lg'>
         <img className='logo-image' src={logo} alt="logo"></img>
           <Container fluid>
-            <Navbar.Brand as={Link} to='/'>
+            <Navbar.Brand  id="navbar-brand" as={Link} to='/'>
               Foodie Finder
             </Navbar.Brand>
             <Navbar.Toggle aria-controls='navbar' />
 
-
             <Navbar.Collapse id='navbar'>
 
             <nav onClick={handleShow}>
-              <div className='place'>
+              <div id='place'>
               <Link to='login'>Login</Link>
-            <br></br>
             <Link to='signup'>Sign Up</Link>
               </div>
 
             <Modal show={showModal} onHide={handleClose} centered>
-            <div className="modal-header">
-              <h5 className="modal-title text-light w-100">What are we eating?</h5>
-              <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-            </div>
             <Routes>
             <Route path='login' element={<Login />} />
             <Route path='signup' element={<SignUp />} />
@@ -66,7 +56,6 @@ import logo from '../images/logo.png'
             </Navbar.Brand> */}
 
             </Navbar.Collapse>
-            
             
           </Container>
 
