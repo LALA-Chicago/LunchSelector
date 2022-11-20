@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Container, Modal } from 'react-bootstrap';
 import {  Routes, Route } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
 // import Auth from '../utils/auth';
@@ -11,8 +12,11 @@ import logo from '../images/logo.png'
   const NavBar = () => {
     
     const [showModal, setShowModal] = useState(false);
-    const handleClose = () => {setShowModal(false);}
-    const handleShow = () => {setShowModal(true);}
+    const handleClose = () => {
+      setShowModal(false);}
+
+    const handleShow = () => {
+      setShowModal(true);}
   
     return (
       <>
@@ -27,24 +31,20 @@ import logo from '../images/logo.png'
 
             <Navbar.Collapse id='navbar'>
 
-            <nav className='place' onClick={handleShow}>
-            <Link to='login'>Login</Link>
+            <nav onClick={handleShow}>
+              <div className='place'>
+              <Link to='login'>Login</Link>
             <br></br>
             <Link to='signup'>Sign Up</Link>
+              </div>
 
             <Modal show={showModal} onHide={handleClose} centered>
-               <Modal.Header>
-               <button
-                onHide={handleClose}
-                style={{ color: '#fff' }}
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-               </Modal.Header>
+            <div className="modal-header">
+              <h5 className="modal-title text-light w-100">What are we eating?</h5>
+              <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+            </div>
             <Routes>
             <Route path='login' element={<Login />} />
             <Route path='signup' element={<SignUp />} />
