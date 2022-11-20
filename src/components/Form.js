@@ -22,7 +22,7 @@ const Form = () => {
 
         const { items } = await response.json();
 
-        const foodData = items.map((food) => ({
+        const foodData = items.map((restaurant) => ({
             restaurantId: restaurant.id,
             name: restaurant.name,
             display_phone: restaurant.display_phone,
