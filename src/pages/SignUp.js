@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
+import { Alert } from "react-bootstrap";
 import { ADD_PROFILE } from '../utils/mutations';
 import '../App.css'
 
@@ -41,9 +42,9 @@ const Signup = () => {
   };
 
   return (
-    <main>
-      <div>
-        <div className="card">
+  <main>
+    <div>
+      <div className="card">
         <div className="modal-header">
               <h5 className="modal-title text-light w-100">SignUp! Press ESC or Submit to exit.</h5>
             </div>
