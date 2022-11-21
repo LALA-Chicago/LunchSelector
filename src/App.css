@@ -114,6 +114,10 @@
   transform: scale(1.1); 
 }
 
+#centerlogin {
+  display: inline;
+}
+
 .modal-header{
     background: var(--header) !important;
 }
