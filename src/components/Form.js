@@ -1,10 +1,18 @@
 import React, { useState } from 'react'
-import { searchZipCode } from '../utils/API'
+import { searchZipCode2 } from '../utils/API'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 const Form = () => {
 
     const [searchInput, setSearchInput] = useState('')
     const [searchZip, setSearchZip] = useState([]);
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);   
+
 
     const handleFormChange = async (event) => {
        event.preventDefault();
@@ -12,15 +20,15 @@ const Form = () => {
        if(!searchInput) {
         return false;
        }
+       handleShow()
 
        try {
-        const response = await searchZipCode(searchInput);
+        const response = await searchZipCode2(searchInput);
 
-        if(!response.ok) {
-            throw new Error('something went wrong');
-        }
+        
+        const { items } = response.json();
 
-        const { items } = await response.json();
+        console.log("items", items)
 
         const foodData = items.map((restaurant) => ({
             // bookId: restaurant.volumeInfo.title,
@@ -64,7 +72,20 @@ const Form = () => {
                 value="RANDOMIZE"
                 />
             </form>
-
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Let's Eat</Modal.Title>
+                </Modal.Header>
+                    <Modal.Body></Modal.Body>
+                <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    Close
+                </Button>
+                <Button variant="primary" onClick={handleClose}>
+                    Save Changes
+                </Button>
+                </Modal.Footer>
+            </Modal>
             <container>
                 <h2>
                     {searchZip.length
