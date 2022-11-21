@@ -35,44 +35,46 @@ export const searchZipCode = (query) => {
 
 
 
-export const searchZipCode2 = (location) => {
-  axios({
-    url: 'https://graphql77.stepzen.net/api/771c0159ac754c62cdc1c5981d1412f9/__graphql',
-    method: 'post',
-    data: {
-      query: `
-        query YelpQueries($yelp_apiKey: Secret!, $query: String) {
-          yelp_search(
-            location: $query
-            limit: 3
-            yelp_apiKey: $yelp_apiKey
-          ) {
-            business {
-              name
-              display_phone
-              photos
-              categories{
-                  title
-              }
-              hours{
-                  is_open_now
-              }
-              location {
-                formatted_address
-              }
-            }
-          }
-        }    
-        `,
-        variables: {
-          yelp_apiKey : "6rWKApRZ2w-J-L3PJ8CeBWRZk96gwXnHbo5jz4s891OcUZYb5OapXqH5CiVGwcBD9_izGbrZF-PVsB5jgF1FW8zTQ4NWzxVUA5RH063Cw8-GGZPrLHJ16WRhr6R1Y3Yx",
-          query: location
-      }
-    }
-  }).then((result) => {
-    console.log(result.data)
-  }).then((data) => {
-    return data
-  });
-}
+// export const searchZipCode2 = (location) => {
+//   axios({
+//     url: 'https://graphql77.stepzen.net/api/771c0159ac754c62cdc1c5981d1412f9/__graphql',
+//     method: 'post',
+//     data: {
+//       query: `
+//         query YelpQueries($yelp_apiKey: Secret!, $query: String) {
+//           yelp_search(
+//             location: $query
+//             limit: 3
+//             yelp_apiKey: $yelp_apiKey
+//           ) {
+//             business {
+//               name
+//               display_phone
+//               photos
+//               categories{
+//                   title
+//               }
+//               hours{
+//                   is_open_now
+//               }
+//               location {
+//                 formatted_address
+//               }
+//             }
+//           }
+//         }    
+//         `,
+//         variables: {
+//           yelp_apiKey : "6rWKApRZ2w-J-L3PJ8CeBWRZk96gwXnHbo5jz4s891OcUZYb5OapXqH5CiVGwcBD9_izGbrZF-PVsB5jgF1FW8zTQ4NWzxVUA5RH063Cw8-GGZPrLHJ16WRhr6R1Y3Yx",
+//           query: location
+//       }
+//     }
+//   }).then((result) => {
+//     let test = result.data
+
+//     let final = test.data.yelp_search.business
+//     console.log("final", final)
+//     return final
+//   });
+// }
 
