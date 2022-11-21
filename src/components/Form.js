@@ -3,18 +3,18 @@ import { searchZipCode } from '../utils/API'
 
 const Form = () => {
 
-    const [searchInput, setSearchInput] = useState([])
-    const [searchZip, setSearchZip] = useState('');
+    const [searchInput, setSearchInput] = useState('')
+    const [searchZip, setSearchZip] = useState([]);
 
     const handleFormChange = async (event) => {
-       event.preventDefault()
+       event.preventDefault();
 
-       if(!searchZip) {
+       if(!searchInput) {
         return false;
        }
 
        try {
-        const response = await searchZipCode(searchZip);
+        const response = await searchZipCode(searchInput);
 
         if(!response.ok) {
             throw new Error('something went wrong');
@@ -23,15 +23,16 @@ const Form = () => {
         const { items } = await response.json();
 
         const foodData = items.map((restaurant) => ({
-            restaurantId: restaurant.id,
-            name: restaurant.name,
-            display_phone: restaurant.display_phone,
-            location: restaurant.location.display_address[0].concat(', ',restaurant.location.display_address[1])
+            // bookId: restaurant.volumeInfo.title,
+            // bookId: restaurant.id,
+            bookId: restaurant.name,
+            // display_phone: restaurant.display_phone,
+            // location: restaurant.location.display_address[0].concat(', ',restaurant.location.display_address[1])
         }))
         //insert way to pull data from api
 
-        setSearchInput(foodData)
-        setSearchZip('')
+        setSearchZip(foodData)
+        setSearchInput('')
     } catch (err) {
         console.error(err)
     }
@@ -51,8 +52,8 @@ const Form = () => {
                 <br></br>
                 <br></br>
                 <input className='zipField'
-                value={searchZip}
-                onChange={(e) => setSearchZip(e.target.value)} 
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)} 
                 placeholder='Zip Code'
                 type="text"
                 />
@@ -63,6 +64,21 @@ const Form = () => {
                 value="RANDOMIZE"
                 />
             </form>
+
+            <container>
+                <h2>
+                    {searchZip.length
+                    ? `Viewing ${searchZip.length} results:`
+                : 'Search for Zip Code to begin'}
+                </h2>
+            </container>
+            <p>
+            {searchZip.map((restaurant) => {
+                return (
+                    <h1>{restaurant.bookId}</h1>
+                )
+            })}
+            </p>
         </div>
     )
 
