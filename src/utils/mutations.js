@@ -24,3 +24,17 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const ADD_RESTAURANT = gql`
+  mutation addRestaurant($name: String!, $image_url: String, $display_phone: String, $categories: String, $location: String) {
+    addRestaurant(name: $name, image_url: $image_url, display_phone: $display_phone, categories: $categories, location: $location) {
+      restaurant {
+        name
+        image_url
+        display_phone
+        categories
+        location
+      }
+    }
+  }
+`;
