@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Link, Routes, Route } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import Auth from '../utils/auth';
-import SavedFavs from '../components/SavedFavs'
+import { ADD_RESTAURANT } from '../utils/mutations';
 
 import axios from 'axios';
+import { useMutation } from '@apollo/client';
 
 const Form = () => {
     const [categoryData, setCategoryData] = useState('restaurants')
@@ -13,7 +13,7 @@ const Form = () => {
     const [chosenPhone, setChosenPhone] =useState('')
     const [chosenLocation, setChosenLocation] =useState('')
     const [chosenPic, setChosenPic] =useState('')
-    const [fullRestaurant, setFullRestaurant] = useState([])
+    const [addRestaurant, {error, data}] = useMutation(ADD_RESTAURANT);
 
     const [show, setShow] = useState(false);
 
@@ -25,16 +25,35 @@ const Form = () => {
         console.log(categoryData)
     }
 
+    const addToRestaurantDB = async (send) =>{
+        console.log(send)
+
+       try {
+           const { data }  = await addRestaurant({
+                variables: {
+                    name: send.name,
+                    image_url: send.picture,
+                    display_phone: send.display_phone,
+                    location: send.location,
+                },
+            })
+            console.log(data)
+       } catch (e){
+           console.error(e)
+           console.log(error)
+       }
+    }
+
     const handleFormChange = async (event) => {
        event.preventDefault();
 
        if(!searchInput) {
         return false;
        }
-       handleShow()
+       
 
        try {
-        axios({
+        await axios({
             url: 'https://graphql77.stepzen.net/api/771c0159ac754c62cdc1c5981d1412f9/__graphql',
             method: 'post',
             data: {
@@ -89,16 +108,15 @@ const Form = () => {
             setChosenPhone(foodData[random].display_phone)
             setChosenLocation(foodData[random].location)
             setChosenPic(foodData[random].picture)
-            setFullRestaurant(foodData[random])
+            handleShow()
+            addToRestaurantDB(foodData[random])
             return final
           });
-        
-        
-    } catch (err) {
-        console.error(err)
-    }
-};
-
+        } catch (err) {
+            console.error(err)
+        }
+    };
+    
     return(
         <div>
             <form onSubmit={handleFormChange}>
@@ -142,18 +160,13 @@ const Form = () => {
                 </button>
 
                 {Auth.loggedIn() ? (
-                  <>
-
-                <button className="logoutBtn" onClick={handleClose}>
-                    <Link to='save'>Save</Link>
-                    <Routes>
-                      <Route path='save' element={<SavedFavs restaurant={fullRestaurant}/>} />
-                    </Routes>
-                </button>
+                <>
+                    <button className="logoutBtn" onClick={handleClose}>
+                        Save
+                    </button>
 
                 </> 
                 ) : (  null )}
-
 
                 </Modal.Footer>
             </Modal>

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 const SavedFavs = (props) => {
 
-    const [savedStuff,setSavedStuff] = useState([])
-    setSavedStuff(props.restaurant)
+    // const [savedStuff,setSavedStuff] = useState([])
+    // setSavedStuff(props.restaurant)
 
     // const items = savedStuff.map((place) => {
     //     return (
@@ -23,7 +23,7 @@ const SavedFavs = (props) => {
     //             <p>{props.display_phone}</p>
     //         </li>
 
-    console.log(props.restaurant)
+    // console.log(props.restaurant)
     return (
 
         <div className='main'>

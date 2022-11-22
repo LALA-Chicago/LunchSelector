@@ -38,3 +38,14 @@ export const ADD_RESTAURANT = gql`
     }
   }
 `;
+
+export const ADD_TO_COLLECTION = gql`
+  mutation addToCollection($restaurantName: String!, $email: String!) {
+    addToUserCollection(restaurantName: $restaurantName, email: $email) {
+      username
+      favoritesRestaurant {
+        _id
+      }
+    }
+}
+`
