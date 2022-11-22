@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Form, Alert } from "react-bootstrap";
 
-// import useMutation and LOGIN-USER
+
 import { useMutation } from "@apollo/react-hooks";
 import { LOGIN_USER } from "../utils/mutations";
 
