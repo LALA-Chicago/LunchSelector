@@ -11,7 +11,7 @@ import './App.css';
 
 
 const url = process.env.NODE_ENV === 'development'
-    ? '/graphql' : 'https://boiling-badlands-98104.herokuapp.com/';
+    ? '/graphql' : 'https://boiling-badlands-98104.herokuapp.com/graphql';
 const httpLink = createHttpLink({
   uri: url
 })
