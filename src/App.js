@@ -1,20 +1,15 @@
 import React from 'react'
 import { HashRouter} from 'react-router-dom'
-// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-// import Login from './pages/Login'
-// import SignUp from './pages/SignUp'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context'
 import Main from './components/Main'
 import NavBar from './components/NavBar'
 import Form from './components/Form'
-// import Nav from './components/Nav';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-// const httpLink = createHttpLink({
-//   uri: '/graphql',
-// });
 
 const url = process.env.NODE_ENV === 'development'
     ? '/graphql' : 'https://boiling-badlands-98104.herokuapp.com/';
@@ -43,12 +38,9 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    //the navbar and section on lines 13 and 14 should be removed
-    //truing to get them on main to only have main here but i cant get it yet
-  <ApolloProvider client={client}>
-    <HashRouter>
     
-      
+  <ApolloProvider client={client}>
+    <HashRouter>      
       <div className="App">
         {/* <Nav /> */}
         <NavBar />
@@ -63,6 +55,7 @@ function App() {
       </div>
       
     </HashRouter>
+
   </ApolloProvider>
   );
 }
