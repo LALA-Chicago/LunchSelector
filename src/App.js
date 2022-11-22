@@ -1,9 +1,12 @@
-import React from 'react'
-import { HashRouter} from 'react-router-dom'
+import React, { useState } from 'react'
+import { HashRouter, Router, Route,Routes} from 'react-router-dom'
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context'
+import { Modal } from 'react-bootstrap';
+
 import Main from './components/Main'
 import NavBar from './components/NavBar'
+import Saved from './components/Saved'
 import Form from './components/Form'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -36,6 +39,12 @@ const client = new ApolloClient({
 });
 
 function App() {
+
+  const [showModal, setShowModal] = useState(false);
+  const handleClose = () => setShowModal(false);
+
+  const handleShow = () => setShowModal(true);
+
   return (
     
   <ApolloProvider client={client}>
@@ -49,6 +58,14 @@ function App() {
         <br></br>
         <br></br>
         <Form />
+
+        <Modal show={showModal} onHide={handleClose} centered>
+        <Routes>
+          {/* <Route path="/" element={<Form />} /> */}
+          <Route path="/saved" element={<Saved />} />
+        </Routes>
+        </Modal>
+      
 
         <br></br>     
       </div>

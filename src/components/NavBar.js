@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Navbar, Container, Modal } from 'react-bootstrap';
 import {  Routes, Route } from 'react-router-dom';
 import Login from '../pages/Login'
+import saved from '../components/Saved'
 import SignUp from '../pages/SignUp'
 import Auth from '../utils/auth';
 import '../App.css'
 import logo from '../images/logo.png'
 
   const NavBar = () => {
+
+    const navigate = useNavigate();
 
     const logout = (event) => {
       event.preventDefault();
@@ -37,6 +40,14 @@ import logo from '../images/logo.png'
               <button className="logoutBtn" onClick={logout}>
                 Logout
               </button>
+              <br></br>
+              <br></br>
+              <div onClick={handleShow}>
+              <button className="logoutBtn" onClick={() => navigate("/saved")}>
+                Saved List
+              </button>
+              </div>
+              
               </>
               ) : (
 
