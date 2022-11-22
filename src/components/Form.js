@@ -131,21 +131,22 @@ const Form = () => {
                 value="RANDOMIZE"
                 />
             </form>
+            
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Let's Eat</Modal.Title>
-                </Modal.Header>
-                    <Modal.Body>
+        <div className="modal-header">
+              <h5 className="modal-title text-light w-100">Let's Eat!</h5>
+            </div>
+            <div className="modal-body ">
                         <h3>{chosenName}</h3>
                         <img src={chosenPic} alt='restaurant' width="50%"></img>
                         <p>{chosenLocation}</p>
                         <p>{chosenPhone}</p>
-                    </Modal.Body>
+              </div>
                 <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button logoutBtn onClick={handleClose}>
                     Close
                 </Button>
-                <Button variant="primary" onClick={handleClose}>
+                <Button logoutBtn onClick={handleClose}>
                     Save Changes
                 </Button>
                 </Modal.Footer>
