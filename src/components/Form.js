@@ -1,19 +1,10 @@
 import React, { useState } from 'react'
 import { Link, Routes, Route } from 'react-router-dom';
-
-// import { searchZipCode2 } from '../utils/API'
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Auth from '../utils/auth';
 import SavedFavs from '../components/SavedFavs'
 
 import axios from 'axios';
-
-
-
-const searchZipCode2 = (location) => {
-    
-  }
 
 const Form = () => {
     const [categoryData, setCategoryData] = useState('restaurants')
@@ -22,6 +13,7 @@ const Form = () => {
     const [chosenPhone, setChosenPhone] =useState('')
     const [chosenLocation, setChosenLocation] =useState('')
     const [chosenPic, setChosenPic] =useState('')
+    const [fullRestaurant, setFullRestaurant] = useState([])
 
     const [show, setShow] = useState(false);
 
@@ -84,14 +76,10 @@ const Form = () => {
             console.log("final", final)
 
             const foodData = final.map((restaurant) => ({
-                // bookId: restaurant.volumeInfo.title,
-                // bookId: restaurant.id,
                 name: restaurant.name,
                 display_phone: restaurant.display_phone,
                 location: restaurant.location.formatted_address,
                 picture: restaurant.photos[0]
-                // display_phone: restaurant.display_phone,
-                // location: restaurant.location.display_address[0].concat(', ',restaurant.location.display_address[1])
             }))
             //insert way to pull data from api
             console.log("foodData",foodData)
@@ -101,6 +89,7 @@ const Form = () => {
             setChosenPhone(foodData[random].display_phone)
             setChosenLocation(foodData[random].location)
             setChosenPic(foodData[random].picture)
+            setFullRestaurant(foodData[random])
             return final
           });
         
@@ -158,7 +147,7 @@ const Form = () => {
                 <button className="logoutBtn" onClick={handleClose}>
                     <Link to='save'>Save</Link>
                     <Routes>
-                      <Route path='save' element={<SavedFavs />} />
+                      <Route path='save' element={<SavedFavs restaurant={fullRestaurant}/>} />
                     </Routes>
                 </button>
 
