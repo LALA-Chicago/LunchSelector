@@ -9,9 +9,9 @@ Something we struggled with was we were having a lot of issues with our login an
 The Foodie Finder app is fully working and functional. When you first enter the page you get confronted with a modal explaining our app and our vision for this app. After reading it and closing out of it you get the option of jumping straight into randomizing a restaurant for your zip code. If you want you can also create an account or log back in so you can save some restaurants you like. After you click the random button you get a restaurant near the zip code you entered. It brings up information on the restaurant like when it's open, a link to the restaurant to buy food, and other information you need to see to believe.
 ---
 Here are some pictures! 
-![Screenshot1]()
-![Screenshot2]()
-![Screenshot3]()
+![Screenshot1](https://i.postimg.cc/kXp6vrFS/image.png)
+![Screenshot2](https://i.postimg.cc/43zYGYCv/image.png)
+![Screenshot3](https://i.postimg.cc/sgWXPM2F/image.png)
 ---
 [Foodie Finder Working Website!](https://intense-temple-20126.herokuapp.com/ready%20to%20eat#/signup)
 [FrontEnd Repo!](https://github.com/LALA-Chicago/LunchSelector)
