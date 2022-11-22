@@ -170,6 +170,11 @@ body {
   overflow: hidden;
   margin-top: -6px;
 }
+.restPic{
+  overflow: hidden;
+  margin-top: -6px;
+  width: 100%;
+}
 #navbar-brand:hover {
   color: var(--body);
   text-decoration: none;
