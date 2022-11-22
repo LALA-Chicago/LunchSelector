@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
+import { Link, Routes, Route } from 'react-router-dom';
+
 // import { searchZipCode2 } from '../utils/API'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Auth from '../utils/auth';
+import SavedFavs from '../components/SavedFavs'
+
 import axios from 'axios';
 
 
@@ -143,12 +148,24 @@ const Form = () => {
                         <p>{chosenPhone}</p>
               </div>
                 <Modal.Footer>
-                <Button logoutBtn onClick={handleClose}>
+                <button className="logoutBtn" onClick={handleClose}>
                     Close
-                </Button>
-                <Button logoutBtn onClick={handleClose}>
-                    Save Changes
-                </Button>
+                </button>
+
+                {Auth.loggedIn() ? (
+                  <>
+
+                <button className="logoutBtn" onClick={handleClose}>
+                    <Link to='save'>Save</Link>
+                    <Routes>
+                      <Route path='save' element={<SavedFavs />} />
+                    </Routes>
+                </button>
+
+                </> 
+                ) : (  null )}
+
+
                 </Modal.Footer>
             </Modal>
         </div>

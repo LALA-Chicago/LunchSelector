@@ -92,6 +92,22 @@
   transition: all .2s ease-in-out; 
 }
 
+.logoutBtn {
+  background-color: #DDA15E;
+  border-radius: 6px;
+  width: 7rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text);
+  transition: all .2s ease-in-out;
+}
+.logoutBtn:hover {
+  background-color: var(--body);
+  color: var(--text);
+  transform: scale(1.1);
+}
+
 .lspageBtn:hover {
   background-color: var(--body);
   color: var(--text);
