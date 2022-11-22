@@ -25,20 +25,6 @@ export const LOGIN_USER = gql`
   }
 `;
 
-export const ADD_RESTAURANT = gql`
-  mutation addRestaurant($name: String!, $image_url: String, $display_phone: String, $categories: String, $location: String) {
-    addRestaurant(name: $name, image_url: $image_url, display_phone: $display_phone, categories: $categories, location: $location) {
-      restaurant {
-        name
-        image_url
-        display_phone
-        categories
-        location
-      }
-    }
-  }
-`;
-
 export const ADD_TO_COLLECTION = gql`
   mutation addToCollection($restaurantName: String!, $email: String!) {
     addToUserCollection(restaurantName: $restaurantName, email: $email) {
@@ -48,4 +34,16 @@ export const ADD_TO_COLLECTION = gql`
       }
     }
 }
+`;
+
+
+export const ADD_RESTAURANT = gql`
+  mutation Mutation($name: String!, $imageUrl: String, $displayPhone: String, $location: String) {
+    addRestaurant(name: $name, image_url: $imageUrl, display_phone: $displayPhone, location: $location) {
+      name
+      image_url
+      location
+      display_phone
+    }
+  }
 `

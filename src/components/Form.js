@@ -21,22 +21,22 @@ const Form = () => {
 
     const handleSelect = (event) => {
         setCategoryData(event.target.value)
-        console.log(categoryData)
+        // console.log(categoryData)
     }
 
     const addToRestaurantDB = async (send) =>{
-        console.log(send)
+        // console.log(send)
 
        try {
            const { data }  = await addRestaurant({
                 variables: {
                     name: send.name,
-                    image_url: send.picture,
-                    display_phone: send.display_phone,
+                    imageUrl: send.picture,
                     location: send.location,
+                    displayPhone: send.display_phone,
                 },
             })
-            console.log(data)
+            // console.log(data)
        } catch (e){
            console.error(e)
            console.log(error)
@@ -107,7 +107,7 @@ const Form = () => {
             setChosenLocation(foodData[random].location)
             setChosenPic(foodData[random].picture)
             handleShow()
-            // addToRestaurantDB(foodData[random])
+            addToRestaurantDB(foodData[random])
             return final
           });
         } catch (err) {
