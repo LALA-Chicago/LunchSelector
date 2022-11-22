@@ -101,7 +101,7 @@ const Form = () => {
             }))
             //console.log("foodData",foodData)
             let random = Math.floor(Math.random() * (foodData.length + 1))
-            setSearchInput('')
+            // setSearchInput('')
             setChosenName(foodData[random].name)
             setChosenPhone(foodData[random].display_phone)
             setChosenLocation(foodData[random].location)
