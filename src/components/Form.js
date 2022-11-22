@@ -131,10 +131,10 @@ const Form = () => {
               <h5 className="modal-title text-light w-100">Let's Eat!</h5>
             </div>
             <div className="modal-body ">
-                        <h3>{chosenName}</h3>
-                        <img src={chosenPic} alt='restaurant' width="50%"></img>
-                        <p>{chosenLocation}</p>
-                        <p>{chosenPhone}</p>
+                        <h3 className="modalText">{chosenName}</h3>
+                        <img className="restPic" src={chosenPic} alt='restaurant' width="50%"></img>
+                        <p className="modalText">{chosenLocation}</p>
+                        <p className="modalText">{chosenPhone}</p>
               </div>
                 <Modal.Footer>
                 <button className="logoutBtn" onClick={handleClose}>
