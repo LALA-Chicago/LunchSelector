@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Container, Modal } from 'react-bootstrap';
 import {  Routes, Route } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
 import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
 import Auth from '../utils/auth';
