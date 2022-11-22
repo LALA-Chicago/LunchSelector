@@ -9,6 +9,7 @@ import Auth from '../utils/auth';
 import '../App.css'
 import logo from '../images/logo.png'
 
+
 const NavBar = () => {
   const navigate = useNavigate();
   const logout = (event) => {
