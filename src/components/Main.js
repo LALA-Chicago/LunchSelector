@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Example from './Modal'
-// import Header from "./menu/Header";
-// import Section from './items/Section'
+
 
 const Main = () => {
 
