@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
 import '../App.css'
-import logo from '../images/logo.png'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 
 const Nav = () => {

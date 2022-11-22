@@ -34,9 +34,6 @@ import logo from '../images/logo.png'
 
             {Auth.loggedIn() ? (
               <>
-              {/* <Link className="btn btn-lg btn-info m-2" to="/"> */}
-                {/* {Auth.getProfile().data.username}'s profile */}
-              {/* </Link> */}
               <button className="logoutBtn" onClick={logout}>
                 Logout
               </button>

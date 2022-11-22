@@ -1,6 +1,5 @@
 import React from 'react'
 import { HashRouter} from 'react-router-dom'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context'
 import Main from './components/Main'

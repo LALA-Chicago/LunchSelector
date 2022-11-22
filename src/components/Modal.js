@@ -25,7 +25,7 @@ function Example() {
       }
     }, []);
   
-    // return isShown ? <h3>Modal content</h3> : null;
+
     return isShown ? (
       <div className="modal" style={dynammicModalClass()} id="channelModal">
         <div className="modal-dialog modal-dialog-centered" role="document">
