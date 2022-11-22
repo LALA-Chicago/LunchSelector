@@ -58,6 +58,7 @@ function Example() {
                     Enter your location and if you want a food category
 
                     Let the computer decide what's for breakfast/lunch/dinner.
+                    If you like the restaurant you can save it if you login or sign up!
 
                     What are you waiting for?
 
