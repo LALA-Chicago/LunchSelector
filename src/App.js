@@ -6,6 +6,7 @@ import { setContext } from '@apollo/client/link/context'
 import Main from './components/Main'
 import NavBar from './components/NavBar'
 import Form from './components/Form'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -39,24 +40,22 @@ function App() {
   return (
     
   <ApolloProvider client={client}>
-  <HashRouter>
-   
-    
-    <div className="App">
-      {/* <Nav /> */}
-      <NavBar />
-      <br></br>
-      <br></br>
-      <Main />
-      <br></br>
-      <br></br>
-      <Form />
+    <HashRouter>      
+      <div className="App">
+        {/* <Nav /> */}
+        <NavBar />
+        <br></br>
+        <br></br>
+        <Main />
+        <br></br>
+        <br></br>
+        <Form />
 
-      <br></br>
+        <br></br>     
+      </div>
+      
+    </HashRouter>
 
-    </div>
-    
-  </HashRouter>
   </ApolloProvider>
   );
 }
