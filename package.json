@@ -1,8 +1,9 @@
 {
   "name": "lunch-selector",
   "version": "0.1.0",
-  "private": true,
   "proxy": "http://localhost:3001",
+  "lproxy": "https://boiling-badlands-98104.herokuapp.com/",
+  "private": true,
   "dependencies": {
     "@apollo/client": "^3.7.1",
     "@apollo/react-hooks": "^4.0.0",
