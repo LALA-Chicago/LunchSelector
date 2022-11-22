@@ -11,6 +11,7 @@ import Form from './components/Form'
 import Nav from './components/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+// const auth = require("./middleware/auth");
 
 // const httpLink = createHttpLink({
 //   uri: '/graphql',
