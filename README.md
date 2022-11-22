@@ -13,7 +13,7 @@ Here are some pictures!
 ![Screenshot2](https://i.postimg.cc/43zYGYCv/image.png)
 ![Screenshot3](https://i.postimg.cc/sgWXPM2F/image.png)
 ---
-[Foodie Finder Working Website!](https://intense-temple-20126.herokuapp.com/ready%20to%20eat#/signup)
+[Foodie Finder Working Website!](https://lala-foodiefinder.herokuapp.com/)
 [FrontEnd Repo!](https://github.com/LALA-Chicago/LunchSelector)
 [Backend Repo!](https://github.com/LALA-Chicago/LunchSelector-BackEnd)
 
