@@ -42,8 +42,8 @@ import logo from '../images/logo.png'
               </button>
               <br></br>
               <br></br>
-              <div onClick={handleShow}>
-              <button className="logoutBtn" onClick={() => navigate("/saved")}>
+              <div className='saveRight' onClick={handleShow}>
+              <button className="savedListBtn" onClick={() => navigate("/saved")}>
                 Saved List
               </button>
               </div>
