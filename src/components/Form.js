@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal';
 import Auth from '../utils/auth';
 import { ADD_RESTAURANT } from '../utils/mutations';
-
 import axios from 'axios';
 import { useMutation } from '@apollo/client';
 
@@ -92,7 +91,7 @@ const Form = () => {
             let test = result.data
         
             let final = test.data.yelp_search.business
-            console.log("final", final)
+            //console.log("final", final)
 
             const foodData = final.map((restaurant) => ({
                 name: restaurant.name,
@@ -100,8 +99,7 @@ const Form = () => {
                 location: restaurant.location.formatted_address,
                 picture: restaurant.photos[0]
             }))
-            //insert way to pull data from api
-            console.log("foodData",foodData)
+            //console.log("foodData",foodData)
             let random = Math.floor(Math.random() * (foodData.length + 1))
             setSearchInput('')
             setChosenName(foodData[random].name)
@@ -109,7 +107,7 @@ const Form = () => {
             setChosenLocation(foodData[random].location)
             setChosenPic(foodData[random].picture)
             handleShow()
-            addToRestaurantDB(foodData[random])
+            // addToRestaurantDB(foodData[random])
             return final
           });
         } catch (err) {
